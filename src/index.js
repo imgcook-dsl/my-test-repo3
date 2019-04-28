@@ -138,11 +138,11 @@ module.exports = function(layoutData, opts) {
     printWidth: 120,
     singleQuote: true
   };
-
+  const styles = prettier.format(renderData.style, prettierOpt);
   return {
     renderData: renderData,
     xml: prettier.format(jsx, prettierOpt),
-    style: prettier.format(renderData.style, prettierOpt),
+    style: styles,
     prettierOpt: prettierOpt
   };
 };

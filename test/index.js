@@ -16,7 +16,8 @@ const vm = new NodeVM({
 
 co(function*() {
   const xtplRender = thunkify(xtpl.render);
-  const code = fs.readFileSync(path.resolve(__dirname, '../src/index.js'), 'utf8');
+  // const code = fs.readFileSync(path.resolve(__dirname, '../src/index.js'), 'utf8');
+  const code = fs.readFileSync(path.resolve(__dirname, '../build/index.js'), 'utf8');
   const renderInfo = vm.run(code)(data, {
     prettier: prettier,
     _: _,
